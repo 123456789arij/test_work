@@ -23,7 +23,10 @@ class Projet extends Model
         return $this->hasMany('App\Tache');
     }
 
-
+    public function categorie()
+    {
+        return $this->belongsTo('App\Categorie');
+    }
 
 
 }

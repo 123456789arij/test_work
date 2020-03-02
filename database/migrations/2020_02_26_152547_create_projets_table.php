@@ -16,6 +16,7 @@ class CreateProjetsTable extends Migration
         Schema::create('projets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Projet_Name');
+            $table->integer('categorie_id');
             $table->timestamps();
         });
     }

@@ -20,8 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Route::group(['middleware' => ['web', 'auth']], function(){
-    Route::get('/home', function(){
+Route::group(['middleware' => ['web', 'auth']], function(){
+    Route::get('/dashbord', function(){
              if(Auth::user()->role_id ==1 ){
                return view('superadmin');
                 }elseif(Auth::user()->role_id == 2){
@@ -29,10 +29,16 @@ Route::get('/home', 'HomeController@index')->name('home');
                 }
           })->name('index');
 
-//});
-Route::get('/index', 'EntrepriseController@index')->name('indexb');
+});
+
+//SuperAdmin.index
+Route::get('/indexSuperAdmin','SuperAdminController@index')->name('SuperAdminindex');
+//Entreprise
+Route::get('/indexEntreprise','Entreprise\EntrepriseController@index')->name('indexEntreprise');
+Route::get('/createEntreprise','Entreprise\EntrepriseController@create')->name('Entreprise.create');
+//Employee
 Route::get('/employee', 'EmployeeController@index')->name('employee');
-Route::get('/employee/create', 'EmployeeController@create')->name('Entreprise.Employeer.create');
+Route::get('/employee/create', 'EmployeeController@create')->name('Employeer.create');
 Route::post('/employeestore', 'EmployeeController@store')->name('Entreprise.Employeer.store');
 Route::get('/employeeEdit/{employee}/edit','EmployeeController@edit')->name('Entreprise.Employeer.edit');
 Route::patch('/employeeupdate/{employee}','EmployeeController@update')->name('Entreprise.Employeer.update');
@@ -41,10 +47,15 @@ Route::delete('/employeedestroy/{employee}', 'EmployeeController@destroy')->name
 Route::get('/user', 'EmployeeController@nombre')->name('nombre');
 //projet
 Route::get('/index', 'ProjetController@index')->name('project');
+Route::get('/employee/create', 'ProjetController@create')->name('Entreprise.projet.create');
+
 //client
-Route::get('/client', 'ClientController@index')->name('client.index');
+Route::get('/client','ClientController@index')->name('client');
 Route::get('/client/create', 'ClientController@create')->name('Entreprise.client.create');
 Route::post('/clientstore', 'ClientController@store')->name('Entreprise.client.store');
+//tache
+
+Route::get('/client', 'TacheController@index')->name('tache.index');
 
 //Route::get('/employee/employee', 'LoginController@EmployeeLogin')->name('employee');
 

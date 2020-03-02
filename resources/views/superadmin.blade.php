@@ -3,9 +3,12 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            @include('includes.profile_sidbar')
             <div class="col-md-8">
                 <div class="card">
+
                     <div class="card-header">Dashboard</div>
+
 
                     <div class="card-body">
                         @if (session('status'))
@@ -15,6 +18,8 @@
                         @endif
 
                         You are logged Supper admin
+
+                      <br>      Dashboard
                     </div>
                 </div>
             </div>

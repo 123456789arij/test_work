@@ -3,7 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            @include('includes.profile_sidbar')
             <div class="col-md-8">
+
                 <div class="card">
                     <div class="card-header"><i class="fas fa-user-alt"></i>Employees </div>
 
@@ -14,7 +16,7 @@
                             </div>
                         @endif
 
-                                <a style="float: right"  class="btn btn-primary"  href="{{ route('Entreprise.Employeer.create') }}"> Ajouter </a>&nbsp;
+                                <a style="float: right"  class="btn btn-primary"  href="{{ route('Employeer.create') }}"> Ajouter </a>&nbsp;
                                 &nbsp;
                                 &nbsp;
                                 <a style="float: right"  class="btn btn-danger"  href="{{ route('index') }}"> Retourner  </a>&nbsp;&nbsp;

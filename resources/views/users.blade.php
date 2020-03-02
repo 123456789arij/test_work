@@ -14,9 +14,7 @@
                             </div>
                         @endif
 
-                            <span class="h4 d-block font-weight-normal mb-2">
-                                {{  $employees}}
-                        </span>
+
                     </div>
                 </div>
             </div>

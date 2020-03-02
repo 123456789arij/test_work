@@ -16,10 +16,13 @@
 
                     You are logged in!
 
-                 {{--       <h3>{{$nbemp}}</h3>
+            {{--                  <span class="h4 d-block font-weight-normal mb-2">
+               <h6>    Nombre Total d'Employes est  :    {{  $emp}} </h6>
+                 </span>
+
 
                         <p>Employés</p>
-                    --}}
+--}}
 
                 </div>
             </div>

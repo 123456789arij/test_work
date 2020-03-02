@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Entreprise;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Entreprise;
+use Illuminate\Support\Facades\DB;
 class EntrepriseController extends Controller
 {
     /**
@@ -13,8 +14,11 @@ class EntrepriseController extends Controller
      */
     public function index()
     {
+     /*   $users =User::all();
+        return view('Entreprise.index',compact('users' ));*/
 
-        return view('Entreprise.index');
+        $users = DB::select('select * from users where role_id = :id', ['id' => 2]);
+        return view('Entreprise.index',compact('users' ));
     }
 
     /**
@@ -24,7 +28,8 @@ class EntrepriseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Entreprise.create');
+
     }
 
     /**
@@ -35,7 +40,7 @@ class EntrepriseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+  //    DB::insert('insert into users where  role_id = :id\', [\'id\' => 2] (id, name,email,password ) values (?, ?,?,?)');
     }
 
     /**

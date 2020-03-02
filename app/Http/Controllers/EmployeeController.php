@@ -112,13 +112,12 @@ class EmployeeController extends Controller
 
 
 
-    public function nombre()
+    public function nombre( Employee  $emp)
     {
-
-        $employees = Employee::count();
+        $emp = Employee::count();
         /*  'comments' => Comment::count(),
           'events' => Event::count(),*/
-        return view('users', compact('employees'));
+        return view('home', compact('emp'));
     }
 
 

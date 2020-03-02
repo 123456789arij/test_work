@@ -5,7 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><i class="fas fa-user-alt"></i>Projects</div>
+                    <div class="card-header"><i class="fas fa-user-alt"></i>Projects
+
+
+                        <a style="float: right"   href="#"> Ajouter  Catégorie  du projet  </a>&nbsp;&nbsp;
+                    </div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -15,7 +19,9 @@
                         @endif
 
 
-                            <a style="float: right"  class="btn btn-primary"  href="#"> Ajouter </a>&nbsp;&nbsp;
+                            <a style="float: right"  class="btn btn-primary"  href="{{ route('Entreprise.projet.create') }}"> Ajouter </a>&nbsp;&nbsp;
+
+                            <a style="float: right"  class="btn btn-danger"  href="{{ route('index') }}"> Retourner  </a>&nbsp;&nbsp;
 
                         <a style="float: left"  class="btn btn-primary"  href="#"> Total Projets </a>&nbsp;&nbsp;
 
